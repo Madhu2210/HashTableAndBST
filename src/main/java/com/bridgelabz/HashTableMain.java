@@ -3,7 +3,7 @@ package com.bridgelabz;
 public class HashTableMain {
     public static void main(String[] args) {
 
-        HashTable<String, Integer> hashTable = new HashTable();
+        MyHashTable<String, Integer> hashTable = new MyHashTable();
         String sentence = "To be or not to be";
 
 
@@ -22,4 +22,3 @@ public class HashTableMain {
         System.out.println(hashTable);
     }
 }
-

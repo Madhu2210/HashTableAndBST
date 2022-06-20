@@ -1,16 +1,16 @@
 package com.bridgelabz;
 
-public class HashTable<K,V>{
-    HashMapNode head;
-    HashMapNode tail;
+public class MyHashTable<K,V>{
+    MyMapNode head;
+    MyMapNode tail;
 
     public V get(K word) {
-        HashMapNode<K, V> myNode = searchNode(word);
+        MyMapNode<K, V> myNode = searchNode(word);
         return (myNode == null) ? null : myNode.getValue();
     }
 
-    public HashMapNode<K, V> searchNode(K word) {
-        HashMapNode<K, V> currentNode = head;
+    public MyMapNode<K, V> searchNode(K word) {
+        MyMapNode<K, V> currentNode = head;
         int position = 0;
         while (currentNode != null) {
             position++;
@@ -23,15 +23,15 @@ public class HashTable<K,V>{
     }
 
     public void add(K key, V value) {
-        HashMapNode<K, V> myNode = searchNode(key);
+        MyMapNode<K, V> myNode = searchNode(key);
         if (myNode == null) {
-            myNode = new HashMapNode<>(key, value);
+            myNode = new MyMapNode<>(key, value);
             this.append(myNode);
         } else
             myNode.setValue(value);
 
     }
-    private void append(HashMapNode<K, V> myNode) {
+    private void append(MyMapNode<K, V> myNode) {
         if (this.head == null)
             this.head = myNode;
         if (this.tail == null)
@@ -51,4 +51,3 @@ public class HashTable<K,V>{
         System.out.println("My nodes: " + head);
     }
 }
-
